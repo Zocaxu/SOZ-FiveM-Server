@@ -191,6 +191,13 @@ export class TargetFactory {
         });
     }
 
+    public createForBones(bones: string[], targets: TargetOptions[], distance = DEFAULT_DISTANCE) {
+        exports['qb-target'].AddTargetBone(bones, {
+            options: targets,
+            distance: distance,
+        });
+    }
+
     public removeTargetModel(models: string[], labels: string[]) {
         exports['qb-target'].RemoveTargetModel(models, labels);
     }

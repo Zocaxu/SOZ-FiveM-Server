@@ -321,4 +321,17 @@ export class VehicleConditionProvider {
             mileage: state.condition.mileage + mileage,
         });
     }
+
+    @OnEvent(ServerEvent.VEHICLE_SLASH_TIRE)
+    public async onVehicleSlashTire(source: number, vehicleNetworkId: number, tireIndex: number) {
+        const state = this.vehicleStateService.getVehicleState(vehicleNetworkId);
+        this.vehicleStateService.updateVehicleCondition(vehicleNetworkId, {
+            tireBurstState: {
+                ...state.condition.tireBurstState,
+                [tireIndex]: true,
+            },
+        });
+
+        this.notifier.notify(source, 'Vous avez crevé le pneu.', 'success');
+    }
 }
