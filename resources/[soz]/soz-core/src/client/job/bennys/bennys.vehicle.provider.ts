@@ -360,9 +360,11 @@ export class BennysVehicleProvider {
             'Vous analysez le véhicule.',
             BennysConfig.Estimate.duration,
             {
-                name: 'base',
-                dictionary: 'missheistdockssetup1clipboard@base',
-                flags: 1,
+                name: 'idle_a',
+                dictionary: 'amb@code_human_in_bus_passenger_idles@female@tablet@idle_a',
+                options: {
+                    onlyUpperBody: true,
+                }
             },
             {
                 disableMovement: true,
@@ -370,16 +372,10 @@ export class BennysVehicleProvider {
                 disableMouse: false,
                 disableCombat: true,
                 firstProp: {
-                    model: 'prop_notepad_01',
-                    bone: 18905,
-                    coords: { x: 0.1, y: 0.02, z: 0.08 },
-                    rotation: { x: -80.0, y: 0.0, z: 0.0 },
-                },
-                secondProp: {
-                    model: 'prop_pencil_01',
-                    bone: 58866,
-                    coords: { x: 0.12, y: -0.02, z: 0.001 },
-                    rotation: { x: -150.0, y: 0.0, z: 0.0 },
+                    model: 'prop_cs_tablet',
+                    bone: 28422,
+                    coords: { x: -0.05, y: 0.0, z: 0.0 },
+                    rotation: { x: 0.0, y: 0.0, z: 0.0 },
                 },
             }
         );
