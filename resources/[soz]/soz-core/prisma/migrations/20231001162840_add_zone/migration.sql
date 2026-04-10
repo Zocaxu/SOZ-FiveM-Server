@@ -1,9 +1,3 @@
--- DropForeignKey
-ALTER TABLE `race_score` DROP FOREIGN KEY `race_score_ibfk_1`;
-
--- DropForeignKey
-ALTER TABLE `race_score` DROP FOREIGN KEY `race_score_ibfk_2`;
-
 -- AlterTable
 ALTER TABLE `vandalism_props` MODIFY `location` TEXT NOT NULL;
 
